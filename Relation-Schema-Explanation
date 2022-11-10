@@ -1,0 +1,51 @@
+Handle all the entities	 
+    strong(non-weak) entities that are not sub-types
+        EVERY entity in the ER diagram is strong
+    strong(non-weak) entities that Are sub types
+        We have no subtype entities
+    Weak entities
+        We have no weak entities in our ER diagram so this part of the schema write up will be skipped
+
+    Relation schema for step 1
+    ▶ BillingInfo (BillingNO,BillingAddress)
+    ▶ User (UserID, ShippingAddress)
+    ▶ Order (OrderNO, Status)
+    ▶ Product (ProductID, Name, Price, Quantity)
+
+Handle all the relationships (relationships marked using *)
+    One-to-one
+    User -> enters* -> BillingInfo
+        ▶ BillingInfo (BillingNO,BillingAddress, UserID†) UserID is a foreign key from User
+        ▶ User (UserID, ShippingAddress,BillingNO†)BillingNO foreign key from BillingInfo
+
+    One-to-many
+    We do not have any one to many in a binary relation
+    Many-to-many
+    User -> Purchase* -> Order
+    ~~▶ User (UserID, ShippingAddress)~~
+    ~~▶ Order (OrderNO, Status)~~
+    *new table made
+    ▶ Purchase(OrderNO†, UserID†)
+
+    Relationship greater than binary
+        See shopping cart entity
+        ▶ ShoppingCart(UserID†, OrderNO†, ProductID†, Price, Quantity, ItemName)
+         Where UserID is a primary key ShoppingCart relationship / foreign key from User
+        And ProductID is a primary key for the ShoppingCart relationship / forgein key from Product
+
+
+************FINAL SCHEMA****************
+▶ Order (OrderNO, Status)
+▶ Product (ProductID, Name, Price, Quantity)
+▶ BillingInfo (BillingNO,BillingAddress)
+▶ User (UserID, ShippingAddress)
+▶ UserBillingInfo (UserID†,BillinNO†)
+	->UserID foreign key referenced from User
+	->BillingNO foregin key referenced from BillingInfo
+▶ Purchase(OrderNO†, UserID†)
+	->OrderNo foreign key referenced from Order
+	->UserID foreign key referenced from User
+▶ ShoppingCart(UserID†, OrderNO†, ProductID†, Price, Quantity, ItemName)
+->UserID foreign key referenced from User
+->OrderNo foreign key referenced from Order
+->ProductID foreign key referenced from Product
