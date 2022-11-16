@@ -23,7 +23,7 @@ Many-to-many
 We have no many to many relations
 
 Relationship greater than binary
-▶ OrderCartUser (Date/Time,CCNumber,CVV,CCName,ShippingAddress,BillingAddress,Purchase,Status,OrderNO†,UserID†)
+▶ OrderCart (Date/Time,CCNumber,CVV,CCName,ShippingAddress,BillingAddress,Purchase,Status,OrderNO†,UserID†)
 	->OrderNO is a primary key in this table and a foreign key from Entity Cart
 	->UserID is a primary key in this table and a foreign key from entity User
 
@@ -36,5 +36,5 @@ Relationship greater than binary
 ▶ User (UserID)
 ▶ Cart (OrderNO, Status)
 ▶ Product(ProductID,Name,Price,Quantity)
-▶ Order (Date/Time,CCNumber,CVV,CCName,ShippingAddress,BillingAddress,Purchase,OrderNO†,UserID†)
+▶ OrderCart (Date/Time,CCNumber,CVV,CCName,ShippingAddress,BillingAddress,Purchase,OrderNO†,UserID†)
 ▶ CartProduct (Quantity,OrderNO†,ProductID†,Status,Price,Name)
