@@ -10,6 +10,10 @@ This was a group project we wrote for my databases class where we created
 a basic ecommerce website from scratch while following a guideline of goals
 to meet when we turn it in.
 
+- If you would like to view an editable version of the ER Diagram you can
+  use the following site:
+  https://app.diagrams.net/
+
 
 ER DIAGRAM EXPLANATION BELOW:
 
