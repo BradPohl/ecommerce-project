@@ -40,9 +40,3 @@ Relationship greater than binary
 ▶ FillCart(OrderNO†,ProductID†,Quantity)
 	->where OrderNO is a primary key in this table and a foreign key from the Entity Cart
 	->where ProductID is a primary key in this table and a foreign key from the Entity Product
-
-▶ Cart (OrderNO,Status,NOTE)
-▶ User (UserID, EMAIL)
-▶ Product (ProductID, Description, Price, Quantity, Name)
-▶ OrderCart (OrderNO†,UserID†, CCName, ShippinAddress, BillingAddress, Purchased, CCV, CCNumber)
-▶ FillCart(OrderNO†,ProductID†,Quantity)
