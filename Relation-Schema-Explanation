@@ -1,4 +1,14 @@
-Handle all the entities	 †
+The final schema is found within the dotted lines
+-----------------------------------------------------------------------
+▶ Cart (OrderNO,Status,NOTE)
+▶ User (UserID, EMAIL)
+▶ Product (ProductID, Description, Price, Quantity, Name)
+▶ OrderCart (OrderNO†,UserID†, CCName, ShippinAddress, BillingAddress, Purchased, CCV, CCNumber)
+▶ FillCart(OrderNO†,ProductID†,Quantity)
+-----------------------------------------------------------------------
+Below are the steps walked through to determine the schema.
+
+Handle all the entities	
 strong(non-weak) entities that are not sub-types
 EVERY entity in the ER diagram is strong
 strong(non-weak) entities that Are sub types
@@ -7,9 +17,9 @@ Weak entities
 We have no weak entities in our ER diagram so this part of the schema write up will be skipped
 
 Relation schema for step 1
-▶ User (UserID)
-▶ Cart (OrderNO, Status)
-▶ Product(ProductID,Name,Price,Quantity)
+▶ Cart (OrderNO,Status,NOTE)
+▶ User (UserID, EMAIL)
+▶ Product (ProductID, Description, Price, Quantity, Name)
 
 
 Handle all the relationships
@@ -20,21 +30,19 @@ One-to-many
 We have no binary one to many relations
 
 Many-to-many
-We have no many to many relations
+We have no many to many relations that are binary
 
 Relationship greater than binary
-▶ OrderCart (Date/Time,CCNumber,CVV,CCName,ShippingAddress,BillingAddress,Purchase,Status,OrderNO†,UserID†)
-	->OrderNO is a primary key in this table and a foreign key from Entity Cart
+▶ OrderCart (OrderNO†,UserID†, CCName, ShippinAddress, BillingAddress, Purchased, CCV, CCNumber)
+->OrderNO is a primary key in this table and a foreign key from Entity Cart
 	->UserID is a primary key in this table and a foreign key from entity User
 
-▶ CartProduct (Quantity,OrderNO†,ProductID†,Status,Price,Name)
-	->where OrderNO is a primary key in this table and a foreign key from Entity Cart
-	->where ProductID is a primary key in this table and a foreign key from Entity Product
+▶ FillCart(OrderNO†,ProductID†,Quantity)
+	->where OrderNO is a primary key in this table and a foreign key from the Entity Cart
+	->where ProductID is a primary key in this table and a foreign key from the Entity Product
 
-
-************FINAL SCHEMA****************
-▶ User (UserID)
-▶ Cart (OrderNO, Status)
-▶ Product(ProductID,Name,Price,Quantity)
-▶ OrderCart (Date/Time,CCNumber,CVV,CCName,ShippingAddress,BillingAddress,Purchase,OrderNO†,UserID†)
-▶ CartProduct (Quantity,OrderNO†,ProductID†,Status,Price,Name)
+▶ Cart (OrderNO,Status,NOTE)
+▶ User (UserID, EMAIL)
+▶ Product (ProductID, Description, Price, Quantity, Name)
+▶ OrderCart (OrderNO†,UserID†, CCName, ShippinAddress, BillingAddress, Purchased, CCV, CCNumber)
+▶ FillCart(OrderNO†,ProductID†,Quantity)
